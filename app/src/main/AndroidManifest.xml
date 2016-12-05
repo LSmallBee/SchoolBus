@@ -6,17 +6,63 @@
         android:allowBackup="true"
         android:icon="@drawable/p6"
         android:label="校车APP"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity" android:theme="@style/AppTheme.NoActionBar" android:label="@string/app_name" android:screenOrientation="portrait">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" /><!--决定应用程序最先启动的Activity -->
-            <category android:name="android.intent.category.LAUNCHER" /><!--决定应用程序是否显示在程序列表里-->
-        </intent-filter>
+        <activity android:name=".LoginActivity"  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="系统主页"  android:screenOrientation="landscape">
         </activity>
-
+        <activity android:name=".SystemActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="系统设置"  android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".NetActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="网络设置"  android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".VideoActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="录像设置"  android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".AlarmActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="报警设置"  android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".DiskActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="磁盘管理"  android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".SearchActivity" android:theme="@style/AppTheme.MenuTextStyle" android:label="搜索回放"  android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".BasicActivity"   android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".VehicleActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".SysinfoActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".LogActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".SysconfigActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".SensorActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".LansettingActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".FlowActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".WirelessActivity" android:screenOrientation="landscape">
+    </activity>
+        <activity android:name=".IpcActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".GbActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".VideochannnelActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".CodeActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".ChannelconfigActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".VideoplanActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".MotionActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".AlarmnumActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".OtherActivity" android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>

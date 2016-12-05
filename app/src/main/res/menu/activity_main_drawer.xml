@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_menu_manage"
+        android:textSize="20sp"
+        android:title="系  统  设  置" />
+
+
+    <item
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/ic_menu_gallery"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:title="网  络  设  置" />
+
+
+    <item
+        android:id="@+id/nav_slideshow"
+        android:textSize="20sp"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="录  像  设  置" />
+
+
+    <item
+        android:id="@+id/nav_manage"
+        android:textSize="20sp"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="报  警  设  置" />
+
+
+    <item
+        android:id="@+id/nav_share"
+        android:textSize="20sp"
+        android:icon="@drawable/ic_menu_share"
+        android:title="磁  盘  管  理" />
+
+
+    <item
+        android:id="@+id/nav_send"
+        android:textSize="20sp"
+        android:icon="@drawable/ic_menu_send"
+        android:title="搜  索  回  放" />
+
+</menu>

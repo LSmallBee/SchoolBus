@@ -6,7 +6,7 @@
 
 
     <Button
-        android:text="导入配置"
+        android:text="录入指纹"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -16,7 +16,7 @@
         android:id="@+id/button1" />
 
     <Button
-        android:text="导出配置"
+        android:text="删除所有"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
@@ -24,13 +24,5 @@
         android:layout_marginTop="28dp"
         android:id="@+id/button2" />
 
-    <Button
-        android:text="恢复出厂"
-        android:layout_width="150sp"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_below="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:layout_marginTop="28dp"
-        android:id="@+id/button5" />
+
 </RelativeLayout>

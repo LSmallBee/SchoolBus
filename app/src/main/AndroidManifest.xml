@@ -7,7 +7,7 @@
         android:icon="@drawable/p6"
         android:label="校车APP"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"  android:screenOrientation="portrait">
+        <activity android:name=".LoginActivity"  android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -37,8 +37,6 @@
         </activity>
         <activity android:name=".SysconfigActivity" android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".SensorActivity" android:screenOrientation="landscape">
-        </activity>
         <activity android:name=".LansettingActivity" android:screenOrientation="landscape">
         </activity>
         <activity android:name=".FlowActivity" android:screenOrientation="landscape">
@@ -62,6 +60,18 @@
         <activity android:name=".AlarmnumActivity" android:screenOrientation="landscape">
         </activity>
         <activity android:name=".OtherActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".FigerActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".RfidActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".TyresettingActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".TyrestateActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".GpsActivity" android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".GsensorActivity" android:screenOrientation="landscape">
         </activity>
     </application>
 

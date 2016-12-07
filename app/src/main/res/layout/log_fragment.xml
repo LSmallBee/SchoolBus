@@ -2,14 +2,79 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF00"
     android:orientation="vertical" >
+
     <TextView
+        android:text="日志类型"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="28sp"
-        android:textColor="#000000"
-        android:text="This is display view"
-        />
+        android:layout_marginStart="100dp"
+        android:textSize="20sp"
+        android:id="@+id/textView1"
+        android:layout_marginTop="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:text="上一页"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/textView1"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="86dp"
+        android:id="@+id/button" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="    日志类型"
+        android:textSize="20sp"
+        android:ems="10"
+        android:id="@+id/editText1"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toEndOf="@+id/textView1" />
+
+    <Button
+        android:text="下一页"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button7"
+        android:layout_alignBaseline="@+id/button6"
+        android:layout_alignBottom="@+id/button6"
+        android:layout_alignEnd="@+id/editText1" />
+
+    <Button
+        android:text="导出"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button6"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_marginStart="14dp" />
+
+    <Button
+        android:text="查找"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_alignBaseline="@+id/editText1"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignEnd="@+id/editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="15"
+        android:layout_marginTop="45dp"
+        android:id="@+id/editText"
+        android:layout_below="@+id/button3"
+        android:layout_alignStart="@+id/textView1" />
+
+
 </RelativeLayout>

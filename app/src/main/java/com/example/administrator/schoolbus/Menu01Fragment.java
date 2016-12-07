@@ -12,14 +12,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.administrator.schoolbus.BasicActivity;
-import com.example.administrator.schoolbus.LogActivity;
-import com.example.administrator.schoolbus.R;
-import com.example.administrator.schoolbus.SensorActivity;
-import com.example.administrator.schoolbus.SysconfigActivity;
-import com.example.administrator.schoolbus.SysinfoActivity;
-import com.example.administrator.schoolbus.VehicleActivity;import com.example.administrator.schoolbus.fragment.*;import com.example.administrator.schoolbus.fragment.SysconfigFragment;import com.example.administrator.schoolbus.fragment.SysinfoFragment;
-
 
 public class Menu01Fragment extends Fragment implements OnItemClickListener {
     /**
@@ -33,7 +25,7 @@ public class Menu01Fragment extends Fragment implements OnItemClickListener {
     /**
      * 用于填充ListView的数据，这里就简单只用了两条数据。
      */
-    private String[] menuItems = { "基本设置", "车辆信息","系统信息","日志管理","配置管理","传感器" };
+    private String[] menuItems = { "基本设置", "车辆信息","系统信息","日志管理","配置管理","传感器（指纹采集）","传感器（RFID）" ,"传感器（轮胎设置）","传感器（轮胎状态）","传感器（GPS）","传感器（G-Sensor）"};
     /**
      * 是否是双页模式。如果一个Activity中包含了两个Fragment，就是双页模式。
      */
@@ -83,7 +75,7 @@ public class Menu01Fragment extends Fragment implements OnItemClickListener {
             if (index == 0) {
                 fragment=new BasicFragment();
             } else if (index == 1) {
-                fragment = new VehicleFragment();
+                fragment = new VehicleFragement();
             }else if(index==2){
                 fragment=new SysinfoFragment();
             }else if(index==3){
@@ -91,7 +83,17 @@ public class Menu01Fragment extends Fragment implements OnItemClickListener {
             }else if(index==4){
                 fragment=new SysconfigFragment();
             }else if(index==5){
-                fragment=new SensorFragment();
+                fragment=new FigerFragment();
+            }else  if(index==6){
+                fragment=new RfidFragment();
+            }else if(index==7){
+                fragment=new TyresettingFragment();
+            }else if(index==8){
+                fragment=new TyrestateFragment();
+            }else if(index==9){
+                fragment=new GpsFragment();
+            }else if(index==10){
+                fragment=new GsensorFragment();
             }
             getFragmentManager().beginTransaction().replace(R.id.details_layout, fragment).commit();
         } else {
@@ -107,7 +109,7 @@ public class Menu01Fragment extends Fragment implements OnItemClickListener {
             }else if(index==4) {
                 intent = new Intent(getActivity(), SysconfigActivity.class);
             }else if(index==5){
-                intent=new Intent(getActivity(),SensorActivity.class);
+//                intent=new Intent(getActivity(),SystemActivity.class);
             }
             startActivity(intent);
         }

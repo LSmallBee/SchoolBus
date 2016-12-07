@@ -12,13 +12,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.administrator.schoolbus.FlowActivity;
-import com.example.administrator.schoolbus.GbActivity;
-import com.example.administrator.schoolbus.IpcActivity;
-import com.example.administrator.schoolbus.LansettingActivity;
-import com.example.administrator.schoolbus.R;
-import com.example.administrator.schoolbus.VideochannnelActivity;
-import com.example.administrator.schoolbus.WirelessActivity;import com.example.administrator.schoolbus.fragment.*;import com.example.administrator.schoolbus.fragment.WirelessFragment;
 
 
 public class Menu02Fragment extends Fragment implements OnItemClickListener {

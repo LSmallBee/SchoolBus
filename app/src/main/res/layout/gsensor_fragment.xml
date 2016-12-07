@@ -5,31 +5,30 @@
     android:orientation="vertical" >
 
     <TextView
-        android:text="通道"
+        android:text="GSensor-X"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:textSize="20sp"
         android:id="@+id/textView1"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="120dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="    通道"
+        android:hint="  GSensor-X"
         android:textSize="20sp"
-        android:ems="13"
+        android:ems="5"
         android:id="@+id/editText1"
+        android:layout_marginStart="17dp"
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_toEndOf="@+id/textView1"
-        android:layout_marginStart="28dp" />
-
+        android:layout_toEndOf="@+id/textView3" />
 
     <TextView
-        android:text="同步时间"
+        android:text=" GSensor-Y"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,21 +36,20 @@
         android:layout_alignStart="@+id/textView1"
         android:layout_marginTop="30dp"
         android:id="@+id/textView2" />
-
-    <CheckBox
-
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="   GSensor-Y"
+        android:ems="5"
+        android:id="@+id/editText2"
         android:layout_below="@+id/editText1"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/editText1"
-        android:layout_marginStart="18dp"
-        android:id="@+id/checkBox2" />
-
+        android:layout_alignStart="@+id/editText1" />
 
     <TextView
-        android:text="地址"
+        android:text="GSensor-Z"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,85 +61,90 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="    地址"
-        android:ems="13"
+        android:hint="    GSensor-Z"
+        android:ems="5"
         android:id="@+id/editText3"
-        android:layout_below="@+id/checkBox2"
+        android:layout_below="@+id/editText2"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignStart="@+id/checkBox2" />
+        android:layout_alignStart="@+id/editText2" />
+
     <TextView
-        android:text="端口"
+        android:text="mg"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="30dp"
-        android:id="@+id/textView4" />
-    <EditText
+        android:id="@+id/textView29"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/textView28" />
+
+    <Button
+        android:text="校准"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="    端口"
-        android:ems="13"
-        android:id="@+id/editText4"
         android:layout_below="@+id/editText3"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignStart="@+id/editText3" />
-
-    <TextView
-        android:text="用户名"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/textView5" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="    用户名"
-        android:ems="13"
-        android:id="@+id/editText5"
-        android:layout_below="@+id/editText4"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_alignStart="@+id/editText4" />
-
-    <TextView
-        android:text="密码"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_marginTop="30dp"
-        android:id="@+id/textView6" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="    密码"
-        android:ems="13"
-        android:id="@+id/editText6"
-        android:layout_below="@+id/editText5"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignStart="@+id/editText5" />
+        android:id="@+id/button4" />
 
     <Button
         android:text="确定"
-        android:layout_width="180px"
-        android:layout_height="80px"
-        android:layout_marginTop="30dp"
-        android:id="@+id/button3"
-        android:layout_below="@+id/textView6"
-        android:layout_alignStart="@+id/editText6" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button4"
+        android:layout_alignEnd="@+id/editText2"
+        android:id="@+id/button8" />
 
+    <TextView
+        android:text="X：0000mg"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/textView30"
+        android:layout_above="@+id/editText1"
+        android:layout_toStartOf="@+id/editText1" />
+
+    <TextView
+        android:text="mg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/textView"
+        android:layout_alignBaseline="@+id/editText1"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_toEndOf="@+id/editText2" />
+
+    <TextView
+        android:text="mg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/textView28"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_toEndOf="@+id/editText2" />
+
+    <TextView
+        android:text="Y：0000mg"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView31"
+        android:layout_alignBaseline="@+id/textView30"
+        android:layout_alignBottom="@+id/textView30"
+        android:layout_toEndOf="@+id/button4" />
+
+    <TextView
+        android:text="Z：0000mg"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView32"
+        android:layout_alignBaseline="@+id/textView31"
+        android:layout_alignBottom="@+id/textView31"
+        android:layout_toEndOf="@+id/textView" />
 
 
 </RelativeLayout>

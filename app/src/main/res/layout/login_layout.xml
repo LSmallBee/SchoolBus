@@ -57,7 +57,7 @@
         android:layout_below="@+id/login_edit_account"
         android:layout_alignParentStart="true" />
     <Button
-        android:layout_width="600px"
+        android:layout_width="400px"
         android:layout_height="wrap_content"
         android:text="登录"
         android:id="@+id/login_btn_login"

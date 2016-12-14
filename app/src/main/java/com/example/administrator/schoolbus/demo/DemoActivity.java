@@ -1,33 +1,35 @@
-package com.example.administrator.schoolbus;
+/**
+ * <p>DemoActivity Class</p>
+ * @author zhuzhenlei 2014-7-17
+ * @version V1.0  
+ * @modificationHistory
+ * @modify by user: 
+ * @modify by reason:
+ */
+package com.example.administrator.schoolbus.demo;
 
-
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import com.example.administrator.schoolbus.demo.CrashUtil;
-import com.example.administrator.schoolbus.demo.JNATest;
-import com.example.administrator.schoolbus.demo.PlaySurfaceView;
-import com.example.administrator.schoolbus.demo.VoiceTalk;
+import com.example.administrator.schoolbus.R;
 import com.hikvision.netsdk.ExceptionCallBack;
 import com.hikvision.netsdk.HCNetSDK;
 import com.hikvision.netsdk.INT_PTR;
@@ -46,9 +48,16 @@ import org.MediaPlayer.PlayM4.Player;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 
-
-public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,Callback{
-    private View v1, v2, v3, v4, v5, v6, v7;
+/**
+ * <pre>
+ *  ClassName  DemoActivity Class
+ * </pre>
+ *
+ * @author zhuzhenlei
+ * @version V1.0
+ * @modificationHistory
+ */
+public class DemoActivity extends Activity implements Callback {
     private Button m_oLoginBtn = null;
     private Button m_oPreviewBtn = null;
     private Button m_oPlaybackBtn = null;
@@ -76,7 +85,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     private int m_iChanNum = 0; // channel number
     private static PlaySurfaceView[] playView = new PlaySurfaceView[4];//4
 
-    private final String TAG = "MainActivity";
+    private final String TAG = "DemoActivity";
 
     private boolean m_bTalkOn = false;
     private boolean m_bPTZL = false;
@@ -86,29 +95,13 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     private boolean m_bSaveRealData = false;
     private boolean m_bStopPlayback = false;
 
+    /** Called when the activity is first created. */
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-//        v1=getLayoutInflater().inflate(R.layout.net_layout, null);
-//        v2=getLayoutInflater().inflate(R.layout.net_layout, null);
-//        v3=getLayoutInflater().inflate(R.layout.net_layout, null);
-//        v4=getLayoutInflater().inflate(R.layout.net_layout, null);
-//        v5=getLayoutInflater().inflate(R.layout.net_layout, null);
-//        v6=getLayoutInflater().inflate(R.layout.net_layout, null);
-//        v7=getLayoutInflater().inflate(R.layout.login_layout, null);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);  //工具栏
-//        setSupportActionBar(toolbar);
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.setDrawerListener(
-//                toggle);
-//        toggle.syncState();
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         CrashUtil crashUtil = CrashUtil.getInstance();
         crashUtil.init(this);
 
@@ -146,7 +139,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
     // @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width,
-                               int height) {
+            int height) {
     }
 
     // @Override
@@ -236,7 +229,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     // ptz listener 云台控制
-    private View.OnTouchListener PTZ_Listener = new View.OnTouchListener() {
+    private OnTouchListener PTZ_Listener = new OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             try {
@@ -251,7 +244,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                             Log.e(TAG,
                                     "start PAN_LEFT failed with error code: "
                                             + HCNetSDK.getInstance()
-                                            .NET_DVR_GetLastError());
+                                                    .NET_DVR_GetLastError());
                         } else {
                             Log.i(TAG, "start PAN_LEFT succ");
                         }
@@ -262,7 +255,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                             Log.e(TAG,
                                     "start PAN_RIGHT failed with error code: "
                                             + HCNetSDK.getInstance()
-                                            .NET_DVR_GetLastError());
+                                                    .NET_DVR_GetLastError());
                         } else {
                             Log.i(TAG, "start PAN_RIGHT succ");
                         }
@@ -273,7 +266,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                                 m_iLogID, m_iStartChan, PTZCommand.PAN_LEFT, 1)) {
                             Log.e(TAG, "stop PAN_LEFT failed with error code: "
                                     + HCNetSDK.getInstance()
-                                    .NET_DVR_GetLastError());
+                                            .NET_DVR_GetLastError());
                         } else {
                             Log.i(TAG, "stop PAN_LEFT succ");
                         }
@@ -286,7 +279,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                             Log.e(TAG,
                                     "stop PAN_RIGHT failed with error code: "
                                             + HCNetSDK.getInstance()
-                                            .NET_DVR_GetLastError());
+                                                    .NET_DVR_GetLastError());
                         } else {
                             Log.i(TAG, "stop PAN_RIGHT succ");
                         }
@@ -302,7 +295,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // preset listener
-    private View.OnClickListener OtherFunc_Listener = new View.OnClickListener() {
+    private OnClickListener OtherFunc_Listener = new OnClickListener() {
         public void onClick(View v) {
             // PTZTest.TEST_PTZ(m_iPlayID, m_iLogID, m_iStartChan);
             // ConfigTest.Test_ScreenConfig(m_iLogID, m_iStartChan);
@@ -326,7 +319,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // Talk listener
-    private View.OnClickListener Talk_Listener = new View.OnClickListener() {
+    private OnClickListener Talk_Listener = new OnClickListener() {
         public void onClick(View v) {
             try {
                 if (m_bTalkOn == false) {
@@ -346,7 +339,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // record listener
-    private View.OnClickListener Record_Listener = new View.OnClickListener() {
+    private OnClickListener Record_Listener = new OnClickListener() {
         public void onClick(View v) {
             if (!m_bSaveRealData) {
                 if (!HCNetSDK.getInstance().NET_DVR_SaveRealData(m_iPlayID,
@@ -363,7 +356,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                     System.out
                             .println("NET_DVR_StopSaveRealData failed! error: "
                                     + HCNetSDK.getInstance()
-                                    .NET_DVR_GetLastError());
+                                            .NET_DVR_GetLastError());
                 } else {
                     System.out.println("NET_DVR_StopSaveRealData succ!");
                 }
@@ -372,7 +365,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // capture listener
-    private View.OnClickListener Capture_Listener = new View.OnClickListener() {
+    private OnClickListener Capture_Listener = new OnClickListener() {
         public void onClick(View v) {
             try {
                 if (m_iPort < 0) {
@@ -410,7 +403,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // playback listener
-    private View.OnClickListener Playback_Listener = new View.OnClickListener() {
+    private OnClickListener Playback_Listener = new OnClickListener() {
 
         public void onClick(View v) {
             try {
@@ -490,7 +483,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                         Log.i(TAG,
                                 "NET_DVR_PlayBackByTime failed, error code: "
                                         + HCNetSDK.getInstance()
-                                        .NET_DVR_GetLastError());
+                                                .NET_DVR_GetLastError());
                     }
                 } else {
                     m_bStopPlayback = true;
@@ -549,7 +542,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
      * } };
      */
     // login listener
-    private View.OnClickListener Login_Listener = new View.OnClickListener() {
+    private OnClickListener Login_Listener = new OnClickListener() {
         public void onClick(View v) {
             try {
                 if (m_iLogID < 0) {
@@ -591,13 +584,13 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // Preview listener
-    private View.OnClickListener Preview_Listener= new View.OnClickListener() {
+    private OnClickListener Preview_Listener= new OnClickListener() {
         public void onClick(View v) {
 
             try {
                 ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
-                        .hideSoftInputFromWindow(MainActivity.this
-                                        .getCurrentFocus().getWindowToken(),
+                        .hideSoftInputFromWindow(DemoActivity.this
+                                .getCurrentFocus().getWindowToken(),
                                 InputMethodManager.HIDE_NOT_ALWAYS);
                 if (m_iLogID < 0) {
                     Log.e(TAG, "please login on device first");
@@ -634,7 +627,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
     };
     // configuration listener
-    private View.OnClickListener ParamCfg_Listener = new View.OnClickListener() {
+    private OnClickListener ParamCfg_Listener = new OnClickListener() {
         public void onClick(View v) {
             try {
                 paramCfg(m_iLogID);
@@ -687,7 +680,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         int i = 0;
         for (i = 0; i < 4; i++) {
             if (playView[i] == null) {
-                playView[i] = new PlaySurfaceView(this);
+             //   playView[i] = new PlaySurfaceView(this);
                 playView[i].setParam(metric.widthPixels);
                 FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.WRAP_CONTENT,
@@ -997,9 +990,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     private RealPlayCallBack getRealPlayerCbf() {
         RealPlayCallBack cbf = new RealPlayCallBack() {
             public void fRealDataCallBack(int iRealHandle, int iDataType,
-                                          byte[] pDataBuffer, int iDataSize) {
+                    byte[] pDataBuffer, int iDataSize) {
                 // player channel 1
-                MainActivity.this.processRealData(1, iDataType, pDataBuffer,
+                DemoActivity.this.processRealData(1, iDataType, pDataBuffer,
                         iDataSize, Player.STREAM_REALTIME);
             }
         };
@@ -1020,9 +1013,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         PlaybackCallBack cbf = new PlaybackCallBack() {
             @Override
             public void fPlayDataCallBack(int iPlaybackHandle, int iDataType,
-                                          byte[] pDataBuffer, int iDataSize) {
+                    byte[] pDataBuffer, int iDataSize) {
                 // player channel 1
-                MainActivity.this.processRealData(1, iDataType, pDataBuffer,
+                DemoActivity.this.processRealData(1, iDataType, pDataBuffer,
                         iDataSize, Player.STREAM_FILE);
             }
         };
@@ -1048,7 +1041,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
      * @return NULL
      */
     public void processRealData(int iPlayViewNo, int iDataType,
-                                byte[] pDataBuffer, int iDataSize, int iStreamMode) {
+            byte[] pDataBuffer, int iDataSize, int iStreamMode) {
         if (!m_bNeedDecode) {
             // Log.i(TAG, "iPlayViewNo:" + iPlayViewNo + ",iDataType:" +
             // iDataType + ",iDataSize:" + iDataSize);
@@ -1104,7 +1097,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                         if (i % 100 == 0) {
                             Log.e(TAG, "inputData failed with: "
                                     + Player.getInstance()
-                                    .getLastError(m_iPort) + ", i:" + i);
+                                            .getLastError(m_iPort) + ", i:" + i);
                         }
 
                         try {
@@ -1141,97 +1134,4 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         // release net SDK resource
         HCNetSDK.getInstance().NET_DVR_Cleanup();
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-        MenuInflater inflater = getMenuInflater();
-        return true;
-    }
-
-    /**
-     * 响应菜单项
-     * 重写activity类的 onOptionsItemSelected(MenuItem)回调方法
-     *
-     * @param item
-     * @return
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-
-        return super.onOptionsItemSelected(item);
-    }
-//        switch (item.getItemId()) {
-//            case R.id.nav_camera:
-//                    setContentView(v1);
-//                break;
-//            case R.id.nav_gallery:
-//                    setContentView(v2);
-//                break;
-//            case R.id.nav_slideshow:
-//                     setContentView(v3);
-//                break;
-//            case R.id.nav_manage:
-//                    setContentView(v4);
-//                break;
-//            case R.id.nav_share:
-//                     setContentView(v5);
-//                break;
-//            case R.id.nav_send:
-//                     setContentView(v6);
-//                break;
-//            case R.id.nav_exit:
-//                     setContentView(v7);
-//               break;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//            drawer.closeDrawer(GravityCompat.START);
-//        return true;
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        if (id == R.id.nav_camera) {
-//        setContentView(v1);
-            Intent intent=new Intent(MainActivity.this,SystemActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
-//            setContetView(v2);
-            Intent intent=new Intent(MainActivity.this,NetActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_slideshow) {
-//            setContentView(v3);
-            Intent intent=new Intent(MainActivity.this,VideoActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-//            setContentView(v4);
-            Intent intent=new Intent(MainActivity.this,AlarmActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_share) {
-//            setContentView(v5);
-            Intent intent=new Intent(MainActivity.this,DiskActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_send) {
-//            setContentView(v6);
-            Intent intent=new Intent(MainActivity.this,SearchActivity.class);
-            startActivity(intent);
-        }
-        return true;
-       }
 }
